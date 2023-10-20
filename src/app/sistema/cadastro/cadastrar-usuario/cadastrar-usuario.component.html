@@ -1,10 +1,8 @@
 <div class="wrapper fadeInDown">
   <div id="formContent">
-    <!-- Tabs Titles -->
 
-    <!-- Icon -->
-    <div class="fadeIn first">
-      <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
+    <div class="fadeIn first ajusteIcone">
+      <img src="https://cdn2.steamgriddb.com/file/sgdb-cdn/logo_thumb/594d480b5b40f5f91bd42433fa91c90c.png" id="icon" alt="User Icon" />
     </div>
 
     <!-- Login Form -->
@@ -68,9 +66,10 @@
           placeholder="CEP"
         />
       </div>
-      <button (click)="buscarCep()">Buscar endereço</button>
+      <br>
+      <button (click)="buscarCep()" class="btn btn-warning">Buscar endereço</button>
 
-      <div>
+      <!--<div>
         <table>
           <thead>
             <tr>
@@ -91,17 +90,17 @@
               <td>
                 {{ endereco.rua }}
               </td>
+              <br>
               <td><input type="text" name="" id="" placeholder="nº casa" /></td>
             </tr>
           </tbody>
         </table>
-      </div>
+      </div> -->
 
-      <button type="submit" class="btn btn-primary" (click)="save()">
-        Registrar
-      </button>
-
-      <button routerLink="">Voltar</button>
+      <br>
+      <br>
+      <button class="btn btn-danger" (click)="save()">Registrar</button>
+      <button routerLink="" class="btn btn-danger botao">Voltar</button>
     </form>
 
   </div>
