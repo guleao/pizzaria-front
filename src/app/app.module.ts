@@ -21,6 +21,10 @@ import { CadastrarFuncionarioComponent } from './sistema/cadastro/cadastrar-func
 import { CadastrarUsuarioComponent } from './sistema/cadastro/cadastrar-usuario/cadastrar-usuario.component';
 import { HeaderuserComponent } from './layout/headeruser/headeruser.component';
 import { IndexUserComponent } from './layout/index-user/index-user.component';
+import { SaboreslistComponent } from './pages/sabores/saboreslist/saboreslist.component';
+import { SaboresdetailsComponent } from './pages/sabores/saboresdetails/saboresdetails.component';
+import { UsuarioslistComponent } from './pages/usuarios/usuarioslist/usuarioslist.component';
+import { UsuariosdetailsComponent } from './pages/usuarios/usuariosdetails/usuariosdetails.component';
 
 
 @NgModule({
@@ -41,6 +45,10 @@ import { IndexUserComponent } from './layout/index-user/index-user.component';
     CadastrarUsuarioComponent,
     HeaderuserComponent,
     IndexUserComponent,
+    SaboreslistComponent,
+    SaboresdetailsComponent,
+    UsuarioslistComponent,
+    UsuariosdetailsComponent,
   ],
   imports: [
     BrowserModule,
