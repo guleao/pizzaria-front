@@ -3,5 +3,4 @@ export class Funcionario {
     nomeFuncionario!: string;
     email!: string;
     senha!: string;
-    admin: Boolean = true;
 }

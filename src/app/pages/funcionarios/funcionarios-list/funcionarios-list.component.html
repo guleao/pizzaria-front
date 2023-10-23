@@ -1,6 +1,6 @@
 <div class="container">
-  <h3 class="alert alert-primary fundoheader">Listagem de produtos!</h3>
-  <button type="button" class="btn btn-danger" (click)="adicionar(modal1)">
+  <h3 class="alert alert-primary fundoheader">Listagem de funcionários!</h3>
+  <button type="button" class="btn btn-dark" (click)="adicionar()">
     Adicionar
   </button>
   <div class="row">
@@ -10,27 +10,27 @@
           <tr>
             <th scope="col">#ID</th>
             <th scope="col">Nome</th>
-            <th scope="col">Preço</th>
+            <th scope="col">E-mail</th>
             <th scope="col">Ações</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let produto of lista; let i = index">
-            <th scope="row">{{ produto.id }}</th>
-            <td>{{ produto.nome }}</td>
-            <td>{{ produto.valor | number : "1.2-2" }}</td>
+          <tr *ngFor="let funcionario of lista; let i = index">
+            <th scope="row">{{ funcionario.id }}</th>
+            <td>{{ funcionario.nomeFuncionario }}</td>
+            <td>{{ funcionario.email }}</td>
             <td *ngIf="!modoLancamento">
               <button
                 type="button"
                 class="btn btn-dark"
-                (click)="editar(modal1, produto, i)"
+                (click)="onEdit(funcionario)"
               >
                 Editar
               </button>
               <button
                 type="button"
                 class="btn btn-danger ajusteBotao"
-                (click)="deletar(produto.id)"
+                (click)="deletar(funcionario.id)"
               >
                 Deletar
               </button>
@@ -38,8 +38,8 @@
             <td *ngIf="modoLancamento">
               <button
                 type="button"
-                class="btn btn-success"
-                (click)="lancamento(produto)"
+                class="btn btn-primary"
+                (click)="lancamento(funcionario)"
               >
                 Lançar
               </button>
@@ -51,9 +51,9 @@
   </div>
 </div>
 
-<ng-template #modal1 let-modal>
+<!-- <ng-template #modal1 let-modal>
   <div class="modal-header">
-    <h4 class="modal-title">Adicionar novo produto</h4>
+    <h4 class="modal-title">Adicionar novo funcionario</h4>
     <button
       type="button"
       class="btn-close"
@@ -62,10 +62,10 @@
     ></button>
   </div>
   <div class="modal-body">
-    <app-produtosdetails
-      [produto]="objetoSelecionadoParaEdicao"
-      (retorno)="addOuEditarProduto($event)"
-    ></app-produtosdetails>
+    <app-funcionario-details
+      [funcionario]="funcionarioSelecionadaParaEdicao"
+      (retorno)="addOuEditarFuncionario($event)"
+    ></app-funcionario-details>
   </div>
   <div class="modal-footer">
     <button
@@ -76,4 +76,4 @@
       Fechar
     </button>
   </div>
-</ng-template>
+</ng-template> -->

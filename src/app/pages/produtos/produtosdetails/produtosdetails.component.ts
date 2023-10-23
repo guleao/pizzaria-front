@@ -18,26 +18,13 @@ export class ProdutosdetailsComponent {
 
   }
 
-  // salvar() {
-  //   this.produtosService.save(this.produto).subscribe({
-  //     next: produto => {
-  //       this.retorno.emit(produto);
-  //     },
-  //     error: erro => {
-  //       alert('ERRO CABULOSO VEJA O CONSOLE');
-  //       console.error(erro);
-  //     }
-  //   });
-  // }
-
-
   salvar() {
     if (this.produto.id > 0) {
       this.produtosService.update(this.produto).subscribe({
-        next: produto => { // QUANDO DÁ CERTO
+        next: produto => {
           this.retorno.emit(produto);
         },
-        error: erro => { // QUANDO DÁ ERRO
+        error: erro => {
           alert('ERRO CABULOSO VEJA O CONSOLE');
           console.error(erro);
         }

@@ -1,0 +1,74 @@
+<form (ngSubmit)="salvar()" [formGroup]="form">
+  <div class="mb-3">
+    <label for="exampleInputText1" class="form-label">Nome:</label>
+    <input
+      type="text"
+      class="form-control"
+      name="exampleInputText1"
+      aria-describedby="emailHelp"
+      formControlName="nomeUsuario"
+    />
+    <div *ngIf="form?.get('nomeUsuario')?.hasError('required')" class="error-message">      Nome de Usuário é obrigatório.
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputText2" class="form-label">Telefone:</label>
+    <input
+      type="text"
+      class="form-control"
+      name="exampleInputText2"
+      aria-describedby="emailHelp"
+      formControlName="telefone"
+    />
+    <div *ngIf="form?.get('nomeUsuario')?.hasError('required')" class="error-message">      Limite máximo de caracteres atingido para Telefone.
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputText3" class="form-label">Email:</label>
+    <input
+      type="text"
+      class="form-control"
+      name="exampleInputText3"
+      aria-describedby="emailHelp"
+      formControlName="email"
+    />
+    <div *ngIf="form?.get('email')?.hasError('required')" class="error-message">      Email inválido.
+    </div>
+  </div>
+  <!-- Outros campos do formulário e mensagens de erro -->
+  <button type="submit" class="btn btn-primary">Salvar</button>  
+<div>
+  <app-cadastrar-usuario (edit)="onEdit($event)"></app-cadastrar-usuario>
+</div>
+  <!-- <div class="mb-3">
+    <label for="exampleInputText1" class="form-label">Email:</label>
+    <input
+      type="text"
+      class="form-control"
+      name="exampleInputText1"
+      aria-describedby="emailHelp"
+      [(ngModel)]="usuario.email"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputText1" class="form-label">Senha:</label>
+    <input
+      type="text"
+      class="form-control"
+      name="exampleInputText1"
+      aria-describedby="emailHelp"
+      [(ngModel)]="usuario.senha"
+    />
+  </div> -->
+  <!-- <div class="mb-3">
+    <label for="exampleInputText1" class="form-label">Telefone:</label>
+    <input
+      type="text"
+      class="form-control"
+      name="exampleInputText1"
+      aria-describedby="emailHelp"
+      [(ngModel)]="usuario.enderecos"
+    />
+  </div> -->
+  <button type="submit" class="btn btn-primary">Salvar</button>
+</form>

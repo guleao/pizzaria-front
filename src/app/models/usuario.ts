@@ -8,6 +8,4 @@ export class Usuario {
     email!: string;
     senha!: string;
     enderecos: Endereco[] = [];
-    admin: Boolean = false;
-
 }

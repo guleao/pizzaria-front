@@ -21,10 +21,10 @@ export class LoginComponent {
     this.loginService.save(this.loginC).subscribe((resultData: any) => {
       console.log(resultData);
       if (resultData.mensagem == "Email inválido") {
-        alert("Email inválido");
+        alert("Email/Senha inválido");
       }
       else if (resultData.mensagem == "Senha inválida") {
-        alert("Senha Inválida");
+        alert("Email/Senha Inválida");
       }
       else if (resultData.mensagem == "Login realizado com sucesso" && resultData.admin == true) {
         this.router.navigateByUrl('/home/pedidos');

@@ -8,7 +8,7 @@
     <!-- Login Form -->
     <form>
       <div class="form-group">
-        <label>Nome</label>
+        <label class="ajusteText">Nome:</label>
         <input
           type="text"
           [(ngModel)]="usuario.nomeUsuario"
@@ -21,7 +21,7 @@
       </div>
 
       <div class="form-group">
-        <label>Email</label>
+        <label class="ajusteText">Email:</label>
         <input
           type="email"
           [(ngModel)]="usuario.email"
@@ -33,19 +33,21 @@
       </div>
 
       <div class="form-group">
-        <label>Senha</label>
+        <label class="ajusteText">Senha:</label>
         <input
-          type="password"
-          [(ngModel)]="usuario.senha"
-          [ngModelOptions]="{ standalone: true }"
-          class="form-control"
-          id="password"
-          class="form-control"
-          placeholder="Senha"
-        />
+        type="{{ senhaVisivel ? 'text' : 'password' }}"
+        [(ngModel)]="usuario.senha"
+        [ngModelOptions]="{ standalone: true }"
+        class="form-control"
+        id="senha"
+        class="form-control"
+        placeholder="Senha"
+        type="password"
+         />
+        <button class="btn btn-danger botaosenha"  (click)="mostrarSenha()">Mostrar senha</button>
       </div>
       <div class="form-group">
-        <label>Telefone</label>
+        <label class="ajusteText">Telefone:</label>
         <input
           type="telefone"
           [(ngModel)]="usuario.telefone"
@@ -56,7 +58,7 @@
         />
       </div>
       <div class="form-group">
-        <label>CEP</label>
+        <label class="ajusteText">CEP:</label>
         <input
           type="telefone"
           [(ngModel)]="cepBusca"

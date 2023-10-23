@@ -1,26 +1,26 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { Produto } from 'src/app/models/produto';
-import { ProdutosService } from 'src/app/services/produtos.service';
+import { Sabores } from 'src/app/models/sabor';
+import { SaboresService } from 'src/app/services/sabor.service';
 
 @Component({
-  selector: 'app-produtoslist',
-  templateUrl: './produtoslist.component.html',
-  styleUrls: ['./produtoslist.component.scss']
+  selector: 'app-sabores-list',
+  templateUrl: './sabores-list.component.html',
+  styleUrls: ['./sabores-list.component.scss']
 })
-export class ProdutoslistComponent {
-  lista: Produto[] = [];
+export class SaboresListComponent {
+  lista: Sabores[] = [];
 
-  @Output() retorno = new EventEmitter<Produto>();
+  @Output() retorno = new EventEmitter<Sabores>();
   @Input() modoLancamento: boolean = false;
 
 
-  objetoSelecionadoParaEdicao: Produto = new Produto();
+  objetoSelecionadoParaEdicao: Sabores = new Sabores();
   indiceSelecionadoParaEdicao!: number;
 
   modalService = inject(NgbModal);
   modalRef!: NgbModalRef;
-  produtosService = inject(ProdutosService);
+  saboresService = inject(SaboresService);
 
   constructor() {
     this.listAll();
@@ -28,8 +28,7 @@ export class ProdutoslistComponent {
 
 
   listAll() {
-
-    this.produtosService.listAll().subscribe({
+    this.saboresService.listAll().subscribe({
       next: lista => {
         this.lista = lista;
       },
@@ -38,12 +37,11 @@ export class ProdutoslistComponent {
         console.error(erro);
       }
     });
-
   }
 
   exemploErro() {
 
-    this.produtosService.exemploErro().subscribe({
+    this.saboresService.exemploErro().subscribe({
       next: lista => {
         this.lista = lista;
       },
@@ -59,20 +57,20 @@ export class ProdutoslistComponent {
   // MÉTODOS DA MODAL
 
   adicionar(modal: any) {
-    this.objetoSelecionadoParaEdicao = new Produto();
+    this.objetoSelecionadoParaEdicao = new Sabores();
     this.indiceSelecionadoParaEdicao = -1;
 
     this.modalRef = this.modalService.open(modal, { size: 'sm' });
   }
 
-  editar(modal: any, produto: Produto, indice: number) {
-    this.objetoSelecionadoParaEdicao = Object.assign({}, produto);
+  editar(modal: any, sabor: Sabores, indice: number) {
+    this.objetoSelecionadoParaEdicao = Object.assign({}, sabor);
     this.indiceSelecionadoParaEdicao = indice;
 
     this.modalRef = this.modalService.open(modal, { size: 'sm' });
   }
 
-  addOuEditarProduto(produto: Produto) {
+  addOuEditarSabor(sabor: Sabores) {
 
     this.listAll();
 
@@ -80,22 +78,20 @@ export class ProdutoslistComponent {
   }
 
 
-  lancamento(produto: Produto) {
-    this.retorno.emit(produto);
+  lancamento(sabor: Sabores){
+    this.retorno.emit(sabor);
   }
 
 
-  deletar(id: number) {
-    this.produtosService.delete(id).subscribe({
+  deletar(id:number) {
+    this.saboresService.delete(id).subscribe({
       next: retorno => {
         this.listAll();
       },
-      error: erro => {
+      error: erro => { 
         alert('ERRO CABULOSO, VEJA O CONSOLE');
         console.error(erro);
       }
     });
   }
-
-
 }

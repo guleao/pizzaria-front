@@ -1,25 +1,11 @@
 h2 {
-    text-align: center;
-    text-decoration:wavy;
-    margin-left: 40px;
-    margin-right: 40px;
-    padding: 40px;
-    background-color: firebrick;
-    border-radius: 40px;
-    border-style:double;
-    border-color: rgb(222, 115, 44);
-    background-image: url(https://cdn.awsli.com.br/2500x2500/2491/2491876/produto/209837351/17712---xadrez-vermelho-gntl1740mv.png);
-    box-shadow:0 10px 50px rgba(121, 120, 120, 0.2);
-
-    -moz-float-edge: border-box;
-
+    margin-left: 10px;
 }
 
 .card {
     margin-top: 15px;
     margin-left: 15px;
     display: inline-block;
-    box-shadow:0 10px 50px rgba(121, 120, 120, 0.2);
 }
 
 .verde {
@@ -29,21 +15,5 @@ h2 {
 
 .ajustarNumModal {
     margin-left: 100%;
-}
-
-.ajustarCardDeCima {
-
-    margin-left: 15%;
-}
-
-.ajustarTitulo { 
-    color: rgb(181, 159, 22);
-    text-align: center;
-    margin-top: 5000px;
-}
-
-.ajustarSubTitulo { 
-    color: rgb(68, 59, 59);
-    text-align: center;
 }
 

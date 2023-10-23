@@ -1,34 +1,6 @@
 <h2>Cardápio Papa's Pizzeria:</h2>
 
-<div class="card mb-3 ajustarCardDeCima" style="max-width: 540px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="https://cms.bitent.com/assets/categories/63d960d7406a7-papas.png" class="img-fluid rounded-start" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Fique atento às novidades!</h5>
-        <p class="card-text">Toda semanas temos novas promoções em determinados itens de nosso cardápio!</p>
-        <p class="card-text"><small class="text-body-secondary"></small></p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="card mb-3 " style="max-width: 540px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="https://png.pngtree.com/png-vector/20220606/ourmid/pngtree-soda-bottle-drink-plastic-cola-png-image_4869113.png" class="img-fluid rounded-start" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Refrigerantes</h5>
-        <p class="card-text">Refrigerantes à venda: Coca-cola, Fanta-uva, Sprite e Guaraná</p>
-        <p class="card-text"><small class="text-body-secondary">Preço dos demais abaixo:</small></p>
-      </div>
-    </div>
-  </div>
-</div>
+<div><button>Faça seu pedido</button></div>
 
 <div class="card" style="width: 12rem">
   <img
@@ -282,33 +254,3 @@
   </div>
 </div>
 
-<ng-template #modal1 let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title">Adicionar novo produto</h4>
-    <button
-      type="button"
-      class="btn-close"
-      aria-label="Close"
-      (click)="modal.dismiss('Cross click')"
-    ></button>
-  </div>
-  <div class="modal-body">
-    <app-cardapio-details
-      [sabores]="objetoSelecionadoParaEdicao"
-      (retorno)="addOuEditarSabor($event)"
-    ></app-cardapio-details>
-  </div>
-  <div class="modal-footer">
-    <button
-      type="button"
-      class="btn btn-light"
-      (click)="modal.close('Close click')"
-    >
-      Fechar
-    </button>
-  </div>
-
-  <h3 class="ajustarTitulo">Seja bem-vindo ao Papa's Pizzeria!</h3>
-  <h3 class="ajustarSubTitulo">Tamanhos de pizzas disponíveis abaixo:</h3>
-
-</ng-template>

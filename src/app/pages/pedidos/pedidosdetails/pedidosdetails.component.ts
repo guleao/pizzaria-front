@@ -24,14 +24,12 @@ export class PedidosdetailsComponent {
   }
 
   salvar() {
-    //ISSO AQUI SERVE PARA EDITAR OU ADICIONAR... TANTO FAZ
-
     this.pedidosService.save(this.pedido).subscribe({
-      next: pedido => { // QUANDO DÁ CERTO
+      next: pedido => {
         this.retorno.emit(pedido);
       },
-      error: erro => { // QUANDO DÁ ERRO
-        alert('Exemplo de tratamento de erro/exception! Observe o erro no console!');
+      error: erro => {
+        alert('ERRO CABULOSO, VEJA O CONSOLE');
         console.error(erro);
       }
     });
@@ -43,8 +41,8 @@ export class PedidosdetailsComponent {
 
   excluir(produto: Produto, indice: number) {
 
-    this.pedido.produtos.splice(indice,1);
-    
+    this.pedido.produtos.splice(indice, 1);
+
   }
 
   retornoProdutosList(produto: Produto) {
@@ -54,7 +52,7 @@ export class PedidosdetailsComponent {
 
     this.pedido.produtos.push(produto);
     this.modalRef.dismiss();
-}
+  }
 
 
   lancar(modal: any) {

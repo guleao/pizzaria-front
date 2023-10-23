@@ -5,7 +5,7 @@
             [(ngModel)]="pedido.obs">
     </div>
 
-    <button type="button" class="btn btn-primary" (click)="lancar(modal1)">Lançar produto</button> 
+    <button type="button" class="btn btn-danger" (click)="lancar(modal1)">Lançar produto</button> 
 
     <table class="table table-striped">
         <thead>
@@ -21,14 +21,14 @@
                 <th scope="row">{{ produto.id }}</th>
                 <td> {{ produto.nome }} </td>
                 <td> {{ produto.valor }} </td>
-                <td> <button type="button" class="btn btn-primary" (click)="excluir(produto,i)">Excluir</button> </td>
+                <td> <button type="button" class="btn btn-danger" (click)="excluir(produto,i)">Excluir</button> </td>
             </tr>
         </tbody>
     </table>
 
 
 
-    <button type="submit" class="btn btn-primary">Salvar</button>
+    <button type="submit" class="btn btn-success">Salvar</button>
 </form>
 
 
@@ -36,7 +36,7 @@
 
 <ng-template #modal1 let-modal>
     <div class="modal-header">
-        <h4 class="modal-title">Modal title</h4>
+        <h4 class="modal-title">Lançar Produto</h4>
         <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
     </div>
     <div class="modal-body">

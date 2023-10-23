@@ -21,11 +21,13 @@ import { CadastrarFuncionarioComponent } from './sistema/cadastro/cadastrar-func
 import { CadastrarUsuarioComponent } from './sistema/cadastro/cadastrar-usuario/cadastrar-usuario.component';
 import { HeaderuserComponent } from './layout/headeruser/headeruser.component';
 import { IndexUserComponent } from './layout/index-user/index-user.component';
-import { SaboreslistComponent } from './pages/sabores/saboreslist/saboreslist.component';
-import { SaboresdetailsComponent } from './pages/sabores/saboresdetails/saboresdetails.component';
-import { UsuarioslistComponent } from './pages/usuarios/usuarioslist/usuarioslist.component';
-import { UsuariosdetailsComponent } from './pages/usuarios/usuariosdetails/usuariosdetails.component';
-
+import { FuncionariosListComponent } from './pages/funcionarios/funcionarios-list/funcionarios-list.component';
+import { FuncionarioDetailsComponent } from './pages/funcionarios/funcionario-details/funcionario-details.component';
+import { UsuarioListComponent } from './pages/usuarios/usuario-list/usuario-list.component';
+import { UsuarioDetailsComponent } from './pages/usuarios/usuario-details/usuario-details.component';
+import { SaboresListComponent } from './pages/sabores/sabores-list/sabores-list.component';
+import { SaboresDetailsComponent } from './pages/sabores/sabores-details/sabores-details.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -45,10 +47,12 @@ import { UsuariosdetailsComponent } from './pages/usuarios/usuariosdetails/usuar
     CadastrarUsuarioComponent,
     HeaderuserComponent,
     IndexUserComponent,
-    SaboreslistComponent,
-    SaboresdetailsComponent,
-    UsuarioslistComponent,
-    UsuariosdetailsComponent,
+    FuncionariosListComponent,
+    FuncionarioDetailsComponent,
+    UsuarioListComponent,
+    UsuarioDetailsComponent,
+    SaboresListComponent,
+    SaboresDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,6 +60,7 @@ import { UsuariosdetailsComponent } from './pages/usuarios/usuariosdetails/usuar
     NgbModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
