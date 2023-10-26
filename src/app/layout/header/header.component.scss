@@ -1,0 +1,55 @@
+body{
+    background-color: var(--color-vermelho);
+}
+
+.logo {
+    width: 50px;
+    margin-right: 20%;
+}
+
+.logo2 {
+    width: 90px;
+    margin-right: 1%;
+    margin-left: 2%;
+}
+
+.logo3 {
+    width: 30px;
+    margin-right: 1%;
+    margin-left: 45%;
+}
+
+.ajusteNav {
+    color: black;
+    margin-right: 4%;
+}
+
+.imagem3{
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.imagem3:hover{
+    -webkit-transform: scale(0.5);
+    transform: scale(1.5);
+}
+
+.imagem1{
+    transition: all 1s;
+    cursor: pointer;
+}
+
+.imagem1:hover{
+    -webkit-transform: rotateZ(360deg);
+    transform: rotateZ(360deg);
+}
+
+.ajt {
+    display: inline;
+    align-items: center;
+}
+
+.icone {
+    margin-right: 1%;
+}
+

@@ -1,0 +1,79 @@
+<div class="container ajusteLocal ">
+  <h3 class="alert fundoheader">Listagem de funcionários!</h3>
+  <button type="button" class="btn btn-dark" (click)="adicionar()">
+    Adicionar
+  </button>
+  <div class="row margemVolta">
+    <div class="col-lg-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let funcionario of lista; let i = index">
+            <th scope="row">{{ funcionario.id }}</th>
+            <td>{{ funcionario.nomeFuncionario }}</td>
+            <td>{{ funcionario.email }}</td>
+            <td *ngIf="!modoLancamento">
+              <button
+                type="button"
+                class="btn btn-dark"
+                (click)="onEdit(funcionario)"
+              >
+                Editar
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger ajusteBotao"
+                (click)="deletar(funcionario.id)"
+              >
+                Deletar
+              </button>
+            </td>
+            <td *ngIf="modoLancamento">
+              <button
+                type="button"
+                class="btn btn-primary"
+                (click)="lancamento(funcionario)"
+              >
+                Lançar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- <ng-template #modal1 let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Adicionar novo funcionario</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <app-funcionario-details
+      [funcionario]="funcionarioSelecionadaParaEdicao"
+      (retorno)="addOuEditarFuncionario($event)"
+    ></app-funcionario-details>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-light"
+      (click)="modal.close('Close click')"
+    >
+      Fechar
+    </button>
+  </div>
+</ng-template> -->

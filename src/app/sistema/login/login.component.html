@@ -1,0 +1,43 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+
+    <!-- Icone Tela de Login -->
+
+    <div class="fadeIn first head header">
+      <img src="https://cdn2.steamgriddb.com/file/sgdb-cdn/logo_thumb/594d480b5b40f5f91bd42433fa91c90c.png" id="icon" alt="User Icon" />
+      <h1>Bem-vindo ao Papa's Pizzaria! 💜😏</h1>
+      <h5>Digite seu e-mail e senha para entrar 😘</h5>
+    </div>
+
+    <!-- Login Form -->
+    <form>
+      Email:
+      <input
+          type="email"
+          [(ngModel)]="loginC.email"
+          [ngModelOptions]="{ standalone: true }"
+          class="form-control"
+          id="email"
+          placeholder="E-mail"
+        />
+        <br>
+        Senha:
+        <input
+        type="password"
+        [(ngModel)]="loginC.senha"
+        [ngModelOptions]="{ standalone: true }"
+        class="form-control"
+        id="password"
+        placeholder="Senha"
+      />
+      <br>
+      <button type="submit" class="btn btn-danger btn-cons" (click)="login()">Realizar login</button>
+    </form>
+    <br>
+    <div>
+      <a class=" underlineHover vermelhotext" routerLink="cadastrarUsuario">Registre-se</a>
+    </div>
+    <br>
+      <a class="underlineHover vermelhotext" href="#">Esqueceu a senha?</a>
+  </div>
+</div>

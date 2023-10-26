@@ -1,0 +1,51 @@
+<div class="pizzaDetailsClass">
+  <h1>Montar pizza 🍕</h1>
+  <br />
+  <div class="mb-3">
+    <label for="pizzaSelect" class="form-label">Tamanho da pizza:</label>
+    <select
+      id="pizzaSelect"
+      class="form-control"
+      name="pizzaSelect"
+      [(ngModel)]="pizza.tamanho"
+    >
+      <option value="" disabled selected>Escolha o tamanho</option>
+      <option value="P">Pequeno / 1s</option>
+      <option value="M">Médio / 2s</option>
+      <option value="G">Grande / 3s</option>
+      <option value="GG">Gigante / 4s</option>
+    </select>
+  </div>
+  <br />
+  <div class="mb-3">
+    <label for="sabores">Sabores:</label>
+    <select
+      id="sabores"
+      [(ngModel)]="pizza.sabores"
+      name="sabores"
+      multiple="multiple"
+    >
+      <option *ngFor="let sabor of sabores" [value]="sabor">
+        {{ sabor.nomeSabor }}
+      </option>
+    </select>
+  </div>
+  <br />
+  <p>Digite a quantidade de pizzas iguais!</p>
+  <input
+    type="number"
+    name="quantidadePizza"
+    id="qtPizza"
+    placeholder="Quantidade"
+    [(ngModel)]="pizza.quantPizza"
+  />
+  <br />
+  <br />
+  <input
+    type="button"
+    value="Adicionar"
+    class="btn btn-dark"
+    id="inputBotao"
+    (click)="salvar()"
+  />
+</div>

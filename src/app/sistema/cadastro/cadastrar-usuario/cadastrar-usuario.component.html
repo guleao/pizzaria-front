@@ -1,0 +1,116 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <div class="fadeIn first ajusteIcone">
+      <img
+        src="https://cdn2.steamgriddb.com/file/sgdb-cdn/logo_thumb/594d480b5b40f5f91bd42433fa91c90c.png"
+        id="icon"
+        alt="User Icon"
+      />
+    </div>
+
+    <!-- Login Form -->
+    <form>
+      <div class="form-group">
+        <label class="ajusteText">Nome:</label>
+        <input
+          type="text"
+          [(ngModel)]="usuario.nomeUsuario"
+          [ngModelOptions]="{ standalone: true }"
+          class="controleFormulario"
+          id="name"
+          placeholder="Nome"
+        />
+      </div>
+
+      <div class="form-group">
+        <label class="ajusteText">Email:</label>
+        <input
+          type="email"
+          [(ngModel)]="usuario.email"
+          [ngModelOptions]="{ standalone: true }"
+          class="controleFormulario"
+          id="email"
+          placeholder="E-mail"
+        />
+      </div>
+
+      <div class="form-group">
+        <label class="ajusteText">Senha:</label>
+        <input
+          type="{{ senhaVisivel ? 'text' : 'password' }}"
+          [(ngModel)]="usuario.senha"
+          [ngModelOptions]="{ standalone: true }"
+          class="controleFormulario2"
+          id="senha"
+          placeholder="Senha"
+          type="password"
+        /><br />
+        <button class="btn btn-danger botaosenha" (click)="mostrarSenha()">
+          Mostrar senha
+        </button>
+      </div>
+      <div class="form-group">
+        <label class="ajusteText">Telefone:</label>
+        <input
+          type="telefone"
+          [(ngModel)]="usuario.telefone"
+          [ngModelOptions]="{ standalone: true }"
+          class="controleFormulario3"
+          placeholder="Telefone"
+        />
+      </div>
+      <div class="form-group">
+        <label class="ajusteText">CEP:</label>
+        <input
+          type="telefone"
+          [(ngModel)]="cepBusca"
+          [ngModelOptions]="{ standalone: true }"
+          class="controleFormulario4"
+          placeholder="CEP"
+        />
+      </div>
+      <br />
+      <button (click)="buscarCep()" class="btn btn-warning">
+        Buscar endereço
+      </button>
+
+      <div>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Bairro:</th>
+              <th>Cep:</th>
+              <th>Rua:</th>
+              <th>Número da casa:</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let endereco of usuario.enderecos">
+              <td>
+                {{ endereco.bairro }}
+              </td>
+              <td>
+                {{ endereco.cep }}
+              </td>
+              <td>
+                {{ endereco.rua }}
+              </td>
+              <td>
+                <input
+                  [(ngModel)]="endereco.numCasa"
+                  [name]="'numeroCasa-' + endereco.id"
+                  type="text"
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <br />
+      <br />
+      <button class="btn btn-danger botao" (click)="save()">Registrar</button>
+      <button routerLink="" class="btn btn-danger botao">Voltar</button>
+    </form>
+  </div>
+</div>
