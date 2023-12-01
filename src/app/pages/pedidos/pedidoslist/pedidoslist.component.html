@@ -1,0 +1,87 @@
+<div class="container">
+  <h3 *ngIf="isAdmin" class="alert fundoheader ajusteLocal">Listagem de pedidos!</h3>
+  <h3 *ngIf="isUser" class="alert fundoheader ajusteLocal">Seus pedidos!</h3>
+  <button *ngIf="isAdmin" type="button" class="btn btn-danger" (click)="adicionar(modal1)">
+    Adicionar
+  </button>
+  <button *ngIf="isUser" type="button" class="btn btn-danger" (click)="adicionar(modal1)">
+    Fazer pedido
+  </button>
+  <div class="row">
+    <div class="col-lg-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#ID</th>
+            <th scope="col">Obs</th>
+            <th scope="col">Usuário</th>
+            <th scope="col">Preço total</th>
+            <th scope="col">Status</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pedido of lista; let i = index">
+            <th scope="row">{{ pedido.id }}</th>
+            <td>{{ pedido.obs }}</td>
+            <td>{{ pedido.usuario.username }}</td>
+            <td>R$ {{ pedido.pedidoPreco }}</td>
+            <td id="status">{{ pedido.status }}</td>
+            <td>
+              <button
+                type="button"
+                class="btn btn-primary"
+                (click)="editar(modal1, pedido, i)"
+              >
+                Editar
+              </button>
+            </td>
+            <td>
+              <button
+                type="button"
+                class="btn btn-danger"
+                (click)="deletar(pedido.id)"
+              >
+                Deletar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<ng-template #modal1 let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Realizar pedido</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <app-pedidosdetails
+      [pedido]="objetoSelecionadoParaEdicao"
+      (retorno)="addOuEditarPedido($event)"
+    ></app-pedidosdetails>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-light"
+      (click)="modal.close('Close click')"
+    >
+      Fechar
+    </button>
+  </div>
+</ng-template>
+
+<style>
+  #status {
+    color: green;
+    font-weight: bold;
+  }
+</style>

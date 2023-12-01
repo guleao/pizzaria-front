@@ -1,0 +1,7 @@
+export enum Status {
+    ANDAMENTO = 'ANDAMENTO',
+    CANCELADO = 'CANCELADO',
+    ENTREGUE = 'ENTREGUE',
+    ACAMINHO = 'ACAMINHO',
+    BALCAO = 'BALCAO'
+}
